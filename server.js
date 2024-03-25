@@ -11,6 +11,14 @@ mongoose.connect('mongodb+srv://shalom:YWV0VlJH7aERcKbO@cluster0.wbnky.mongodb.n
     useUnifiedTopology: true,
 });
 
+mongoose.connection.on('connected', () => {
+    console.log('Connected to MongoDB');
+});
+
+mongoose.connection.on('error', (err) => {
+    console.error('Error connecting to MongoDB:', err.message);
+});
+
 // Create mongoose schemas and models
 const Product = mongoose.model('Product', {
     name: String,
