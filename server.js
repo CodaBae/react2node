@@ -23,8 +23,8 @@ mongoose.connection.on('error', (err) => {
 const Product = mongoose.model('Product', {
     name: String,
     price: Number,
-    image: Number,
-    desc: Number,
+    image: String,
+    desc: String,
 
 
 });
