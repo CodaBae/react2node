@@ -27,6 +27,8 @@ const Order = mongoose.model('Order', {
         ref: 'Product',
     },
     quantity: Number,
+    info: Object,
+
 });
 
 // Routes
@@ -69,6 +71,8 @@ app.post('/orders', async (req, res) => {
     const order = new Order({
         product: req.body.productId,
         quantity: req.body.quantity,
+        info: req.body.info,
+
     });
 
     try {
